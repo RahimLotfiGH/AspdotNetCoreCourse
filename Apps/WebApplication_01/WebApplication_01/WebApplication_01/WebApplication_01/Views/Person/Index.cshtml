@@ -1,0 +1,34 @@
+﻿@model PersonVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Index</h1>
+    <form asp-controller="person" asp-action="showPerson" method="post">
+
+        <label asp-for="@Model.Id"> </label>
+        <br />
+        <input asp-for="@Model.Id" />
+        <br />
+        <label asp-for="@Model.FirstName"> </label>
+        <br />
+        <input asp-for="@Model.FirstName" />
+        <br />
+        <label asp-for="@Model.LastName"> </label>
+        <br />
+        <input asp-for="@Model.LastName" />
+        <br />
+        <input type="submit" value="ارسال" />
+
+    </form>
+
+</body>
+</html>

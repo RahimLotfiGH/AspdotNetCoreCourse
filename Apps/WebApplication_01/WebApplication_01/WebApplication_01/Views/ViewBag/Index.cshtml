@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1> @ViewBag.UserName</h1>
+    @{
+        var personVm = ViewBag.personVm as PersonVm;
+    }
+    <h1>
+        @personVm?.Id
+        :
+        @personVm?.FirstName
+        :
+        @personVm?.LastName
+    </h1>
+
+</body>
+</html>

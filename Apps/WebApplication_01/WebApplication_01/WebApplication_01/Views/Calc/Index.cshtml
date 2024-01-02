@@ -1,0 +1,88 @@
+﻿@model CalcVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form asp-action="Run" asp-controller="Calc">
+
+        <label asp-for="NumberOne"></label>
+        <input asp-for="NumberOne" value="@Model.NumberOne" />
+        <br />
+        <label asp-for="NumberTwo" hidden="true"></label>
+        <input asp-for="NumberTwo" value="@Model.NumberTwo" hidden />
+        <br />
+        <strong>@Model.Result</strong>
+        <br />
+        <input type="submit" asp-for="Operation" value="@ECalcOperation.Sum" />
+        <input type="submit" asp-for="Operation" value="@ECalcOperation.Div" />
+        <input type="submit" asp-for="Operation" value="@ECalcOperation.Min" />
+        <input type="submit" asp-for="Operation" value="@ECalcOperation.Mul" />
+
+    </form>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <br />
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <br />
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <br />
+    <button>0</button>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        const buttonTagName = 'button';
+        const numberOneId = '#NumberOne';
+
+        $(document).ready(onLoad);
+
+
+        function onLoad() {
+
+            $(buttonTagName).click(buttonClickEvent);
+
+        }
+
+        function buttonClickEvent() {
+
+            const buttonTextValue = $(this).text();
+
+            var inputValue = getInputValue(numberOneId);
+
+            if (isZero(inputValue))
+                inputValue = '';
+
+            var newValue = inputValue + buttonTextValue;
+
+            setInputValue(numberOneId, newValue);
+        }
+
+
+        function getInputValue(id) {
+            return $(id).val();
+        }
+
+        function setInputValue(id, value) {
+            $(id).val(value);
+        }
+
+        function isZero(value) {
+            return value === '0';
+        }
+
+    </script>
+</body>
+</html>

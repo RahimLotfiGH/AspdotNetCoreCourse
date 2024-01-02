@@ -1,0 +1,14 @@
+----------------------------------------------------------Asp.Net Core 
+Install-Package Microsoft.EntityFrameworkCore -Version 3.1.7
+Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 3.1.7
+Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.1.7
+---------------------------------------------------------------------
+"Server=.;Database=myDataBase;Trusted_Connection=True;"
+---------------------------------------------------------------------
+IEntityTypeConfiguration<AppUser>
+Add-Migration
+Update-Database
+Script-Migration
+----------------------------------------------------------------------
+IUnitOfWork
+Repository

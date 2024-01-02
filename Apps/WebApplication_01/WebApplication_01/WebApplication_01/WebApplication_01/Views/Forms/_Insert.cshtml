@@ -1,0 +1,17 @@
+﻿@model PersonVm
+
+@await Component.InvokeAsync("ModalForm", new ModalFormVc
+{
+    Title = "فرم درج کاربر",
+    ActionName = "_Insert",
+    Content = @<text>
+        <label asp-for="FirstName"></label>
+        <br />
+        <input asp-for="FirstName" />
+        <br />
+        <label asp-for="LastName"></label>
+        <br />
+        <input asp-for="LastName" />
+
+    </text>
+})

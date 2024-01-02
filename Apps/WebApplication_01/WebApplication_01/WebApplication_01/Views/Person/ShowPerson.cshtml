@@ -1,0 +1,23 @@
+﻿@model PersonVm
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowPerson</title>
+</head>
+<body>
+    <h1>show person</h1>
+    <h1>
+        @Model.Id
+        :
+        @Model.FirstName
+        :
+        @Model.LastName
+    </h1>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@model LoginVm
+
+<form asp-action="Index" asp-controller="Login" method="post">
+
+    <label asp-for="UserName"></label>
+    <br />
+    <input asp-for="UserName" />
+    <br />
+    <label asp-for="Password"></label>
+    <br />
+    <input asp-for="Password" />
+    <br />
+    <label asp-for="IsRememberMe"></label>
+    <input asp-for="IsRememberMe" />
+    <br />
+    <input type="submit" value="Login" />
+
+</form>

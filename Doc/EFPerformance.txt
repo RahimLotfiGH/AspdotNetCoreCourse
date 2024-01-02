@@ -1,0 +1,34 @@
+www.Heilton.com
+----------------------------------------in connection   String  
+  
+MultipleActiveResultSets=True;
+Max Pool Size=200;
+
+
+--------------------------------------Control Data Type  in Config File
+   [Column(TypeName =  "varchar")]
+   public  string PostalZipCode {  get;  set; }
+
+-------------------------------------------Index in Sql Server 
+ 
+  CREATE NONCLUSTERED INDEX [NonClusteredIndex_City] ON [dbo].[Pupils] ([City])
+  INCLUDE  ([FirstName], [LastName]) ON [PRIMARY]
+
+------------------------------------------must pre-calculate this value
+
+  int resultsToSkip = model.Page * model.ResultsPerPage;
+   var schools = db.Schools
+       .OrderBy(s => s.PostalZipCode)
+       .Skip(() => resultsToSkip )//must pre-calculate this value
+       .Take(() => model.ResultsPerPage)
+       .ToList();
+------------------------------------------BalkInsert
+
+SaveChange Aftre Loop or Use .AddRange() 
+
+------------------------------------------
+Use Async function 
+------------------------------------------
+Use .AsNoTracking()
+------------------------------------------
+.FirstOrDefault()

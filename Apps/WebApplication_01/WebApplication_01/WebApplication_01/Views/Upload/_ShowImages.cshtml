@@ -1,0 +1,7 @@
+﻿@model IEnumerable<System.IO.FileInfo>
+
+@foreach (var file in Model)
+{
+    <img src="~/UserFiles/Images/@file.Name" style="width: 100px;height:100px " />
+    <a href="~/UserFiles/Images/@file.Name">FullSize</a>
+}

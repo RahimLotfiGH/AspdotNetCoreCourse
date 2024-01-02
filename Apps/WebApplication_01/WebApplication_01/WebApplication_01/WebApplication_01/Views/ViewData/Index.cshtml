@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    @if (ViewData["UserName"] != null)
+    {
+        <h1>@ViewData["UserName"]</h1>
+    }
+    else
+    {
+        <h1>Not Find</h1>
+    }
+
+
+</body>
+</html>

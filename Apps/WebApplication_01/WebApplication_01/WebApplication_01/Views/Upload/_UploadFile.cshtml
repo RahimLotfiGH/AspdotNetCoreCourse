@@ -1,0 +1,11 @@
+﻿@model UploadVm
+
+<form enctype="multipart/form-data"
+      asp-action="UploadFile"
+      asp-controller="Upload">
+
+    <input asp-for="TheFile" />
+
+    <input type="submit" value="Upload" />
+</form>
+<label class="alert-danger">@TempData[TempDataNameConsts.Message]</label>

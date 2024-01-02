@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+@await Component.InvokeAsync("Login", new LoginVc { UserName = "ali", Password = "123" })
+
+
+@*<a asp-controller="Test" asp-action="Index"> Go To Index</a>
+    <br />
+    <a asp-controller="Test"
+       asp-action="ShowId"
+       asp-route-id="10"
+       asp-route-UserName="Heilton"
+       asp-fragment="this is  a test"
+       asp-host="heilton.com"
+       asp-protocol="Http"
+       asp-area=""> Go to show  Id</a>*@
